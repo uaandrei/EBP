@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 01/05/2013 17:45:12
+-- Date Created: 01/06/2013 21:29:49
 -- Generated from EDMX file: C:\Users\Andrei\Documents\Visual Studio 2012\Projects\EBP\EnterpriseLibraryBasedBiddingApp\DataMapper\EntityFrameworkDataMapper\BiddingDataModel.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,35 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ProductCategory]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_ProductCategory];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProductBid]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Bids] DROP CONSTRAINT [FK_ProductBid];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserBid]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Bids] DROP CONSTRAINT [FK_UserBid];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CategorySubcategory]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Categories] DROP CONSTRAINT [FK_CategorySubcategory];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Products]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Products];
+GO
+IF OBJECT_ID(N'[dbo].[Categories]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Categories];
+GO
+IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Users];
+GO
+IF OBJECT_ID(N'[dbo].[Bids]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Bids];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -34,7 +58,9 @@ CREATE TABLE [dbo].[Products] (
     [BidStartDate] datetime  NOT NULL,
     [BidEndDate] datetime  NOT NULL,
     [StartingPrice] decimal(18,0)  NOT NULL,
-    [BidCurrency] nvarchar(10)  NOT NULL
+    [BidCurrency] nvarchar(10)  NOT NULL,
+    [Name] nvarchar(20)  NOT NULL,
+    [Description] nvarchar(500)  NOT NULL
 );
 GO
 

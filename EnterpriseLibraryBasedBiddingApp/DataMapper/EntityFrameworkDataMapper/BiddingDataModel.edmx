@@ -37,6 +37,8 @@
     <Property Name="BidEndDate" Type="datetime" Nullable="false" />
     <Property Name="StartingPrice" Type="decimal" Nullable="false" />
     <Property Name="BidCurrency" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
   </EntityType>
   <EntityType Name="Categories">
     <Key>
@@ -149,6 +151,8 @@
           <Property Type="DateTime" Name="BidEndDate" Nullable="false" />
           <Property Type="Decimal" Name="StartingPrice" Nullable="false" />
           <Property Type="String" Name="BidCurrency" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="500" />
           </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -235,6 +239,8 @@
           <ScalarProperty Name="BidEndDate" ColumnName="BidEndDate" />
           <ScalarProperty Name="StartingPrice" ColumnName="StartingPrice" />
           <ScalarProperty Name="BidCurrency" ColumnName="BidCurrency" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
