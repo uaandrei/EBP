@@ -9,6 +9,7 @@ namespace DomainModel
     [HasSelfValidation()]
     public partial class Product
     {
+        //TODO: CTOR with params and without
         #region Methods
 
         public ValidationResult AddBid(Bid bid)
@@ -41,7 +42,7 @@ namespace DomainModel
             {
                 validationResults.AddResult(new ValidationResult(Resources.ProductEndDateCantBeSetInPastTimeMessage, this, "BidEndDate", "", null));
             }
-            if (StartingPrice<0)
+            if (StartingPrice<=0)
             {
                 validationResults.AddResult(new ValidationResult(Resources.ProductStartingPriceMustBeGreaterThanZeroMessage, this, "StartingPrice", "", null));
             }

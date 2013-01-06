@@ -81,6 +81,10 @@
       <Project>{ebe978f7-888f-4662-82ac-9f34b98aa26a}</Project>
       <Name>DomainModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
+      <Project>{fbe18b45-696f-4dd0-9675-a49464c347e2}</Project>
+      <Name>ServiceLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

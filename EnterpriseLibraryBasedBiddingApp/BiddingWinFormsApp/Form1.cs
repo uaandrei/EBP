@@ -14,14 +14,11 @@ namespace BiddingWinFormsApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            User user = new User();
-            user.Name = "Adi";
-            user.Password = "1q2w3e";
-            UserServices userServices = new UserServices();
-            userServices.AddUser(user);
-            var list = userServices.GetAllUsers();
-            dataGridView1.DataSource = list;
-            var x = list[0].Bids;
+            var productServices = new ProductServices();
+            var product = new Product();
+            var valids = productServices.AddProduct(product);
+            var bid = new Bid();
+            var valid = productServices.AddBidForProduct(product, bid);
         }
     }
 }

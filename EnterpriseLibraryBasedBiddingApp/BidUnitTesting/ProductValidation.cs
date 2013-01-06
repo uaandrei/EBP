@@ -3,6 +3,7 @@ using DomainModel;
 using Microsoft.Practices.EnterpriseLibrary.Validation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using ServiceLayer;
 
 namespace BidUnitTesting
 {
@@ -13,6 +14,7 @@ namespace BidUnitTesting
     public class ProductValidation
     {
         private Product _product;
+        private ProductServices _productServices;
 
         public ProductValidation()
         {
@@ -20,6 +22,7 @@ namespace BidUnitTesting
             // TODO: Add constructor logic here
             //
             _product = new Product();
+            _productServices = new ProductServices();
         }
 
         #region Additional test attributes
@@ -52,7 +55,7 @@ namespace BidUnitTesting
         private void AssertExpectedMessage(string expectedMessage)
         {
             var success = false;
-            foreach (var item in Validation.Validate(_product))
+            foreach (var item in _productServices.AddProduct(_product))
             {
                 if (item.Message == expectedMessage)
                 {
@@ -90,7 +93,7 @@ namespace BidUnitTesting
         {
             _product.StartingPrice = 110;
             var bid = new Bid(100);
-            Assert.AreEqual(Resources.BidSumMustBeGreaterThanProductStartingPrice, _product.AddBid(bid).Message);
+            Assert.AreEqual(Resources.BidSumMustBeGreaterThanProductStartingPrice, _productServices.AddBidForProduct(_product, bid).Message);
         }
 
         [TestMethod]
@@ -98,7 +101,7 @@ namespace BidUnitTesting
         {
             _product.StartingPrice = 90;
             var bid = new Bid(99);
-            Assert.AreEqual(string.Empty, _product.AddBid(bid).Message);
+            Assert.AreEqual(string.Empty, _productServices.AddBidForProduct(_product,bid).Message);
         }
 
         [TestMethod]
