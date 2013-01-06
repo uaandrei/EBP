@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="52c77342686347c1a71030fff30742c7" Name="Diagram1" >
+        <EntityTypeShape EntityType="BiddingDataModel.Product" Width="1.5" PointX="4.875" PointY="4" />
+        <EntityTypeShape EntityType="BiddingDataModel.Category" Width="1.5" PointX="7.125" PointY="4" />
+        <EntityTypeShape EntityType="BiddingDataModel.User" Width="1.5" PointX="4.875" PointY="1" />
+        <EntityTypeShape EntityType="BiddingDataModel.Bid" Width="1.5" PointX="7.125" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="BiddingDataModel.ProductCategory" />
+        <AssociationConnector Association="BiddingDataModel.ProductBid" />
+        <AssociationConnector Association="BiddingDataModel.UserBid" />
+        <AssociationConnector Association="BiddingDataModel.CategorySubcategory" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
