@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BidMustBeGreaterThanLastBid" xml:space="preserve">
+    <value>Bid Must Be Greater Than Last Bid</value>
+  </data>
+  <data name="BidMustHaveProduct" xml:space="preserve">
+    <value>bid must have product</value>
+  </data>
+  <data name="BidMustHaveUser" xml:space="preserve">
+    <value>bid must have user</value>
+  </data>
   <data name="BidSumMustBeGreaterThan1Message" xml:space="preserve">
     <value>Bid sum must be greater than 1.</value>
   </data>
@@ -126,14 +135,56 @@
   <data name="BidSumMustBeSmallerThan999999Message" xml:space="preserve">
     <value>Bid sum must be smaller than 999999.</value>
   </data>
+  <data name="CategoryCantHaveSoManyProductInBdidding" xml:space="preserve">
+    <value>CategoryCantHaveSoManyProductInBdidding</value>
+  </data>
+  <data name="CategoryNameLength" xml:space="preserve">
+    <value>Category name cannot contain more than 20 characters.</value>
+  </data>
+  <data name="DescriptionToLong" xml:space="preserve">
+    <value>Description To Long</value>
+  </data>
+  <data name="InvalidCategoryName" xml:space="preserve">
+    <value>Invalid category name!</value>
+  </data>
+  <data name="InvalidDescription" xml:space="preserve">
+    <value>Invalid Description</value>
+  </data>
+  <data name="InvalidUserName" xml:space="preserve">
+    <value>invalid user name</value>
+  </data>
+  <data name="InvalidUserPassword" xml:space="preserve">
+    <value>invalid user  password</value>
+  </data>
   <data name="NewProductBidMustBeGreaterThanLastOneMessage" xml:space="preserve">
     <value>The product bid must be greater than the last bid.</value>
+  </data>
+  <data name="ProductBidCurrencyInvalid" xml:space="preserve">
+    <value>Product bid currency invalid.</value>
+  </data>
+  <data name="ProductBidCurrencyMaxLenght" xml:space="preserve">
+    <value>Product bid currency max length exceeded: 20.</value>
   </data>
   <data name="ProductEndDateCantBeSetInPastTimeMessage" xml:space="preserve">
     <value>Product bidding end date can't be set in the past.</value>
   </data>
   <data name="ProductEndDateMustBeGreaterThanStartDateMessage" xml:space="preserve">
     <value>Product bidding end date must be greater than start date.</value>
+  </data>
+  <data name="ProductInvalidCategory" xml:space="preserve">
+    <value>Invalid category for product.</value>
+  </data>
+  <data name="ProductMustHaveAnOwner" xml:space="preserve">
+    <value>Product Must Have An Owner</value>
+  </data>
+  <data name="ProductNameInvalid" xml:space="preserve">
+    <value>Product Name Invalid</value>
+  </data>
+  <data name="ProductNameMaxLength" xml:space="preserve">
+    <value>Product name less than 20 char.</value>
+  </data>
+  <data name="ProductNotAvailableForBidding" xml:space="preserve">
+    <value>Product Not Available For Bidding</value>
   </data>
   <data name="ProductStartDateCantBeSetInPastTimeMessage" xml:space="preserve">
     <value>Product bidding start date can't be set in the past.</value>
@@ -143,5 +194,53 @@
   </data>
   <data name="ProductStartingPriceMustBeLowerThan1000000Message" xml:space="preserve">
     <value>Product starting price must be lower than 1000000.</value>
+  </data>
+  <data name="RatingCannotBeMoreThan10" xml:space="preserve">
+    <value>RatingCannotBeMoreThan10</value>
+  </data>
+  <data name="RatingDescriptionToLong" xml:space="preserve">
+    <value>RatingDescriptionToLong</value>
+  </data>
+  <data name="RatingMustBePositiveNumber" xml:space="preserve">
+    <value>RatingMustBePositiveNumber</value>
+  </data>
+  <data name="RatingMustContainADescription" xml:space="preserve">
+    <value>RatingMustContainADescription</value>
+  </data>
+  <data name="RatingMustHaveAssociatedUser" xml:space="preserve">
+    <value>RatingMustHaveAssociatedUser</value>
+  </data>
+  <data name="RoleDescriptionCannotBeEmpty" xml:space="preserve">
+    <value>RoleDescriptionCannotBeEmpty</value>
+  </data>
+  <data name="RoleDescriptionToLong" xml:space="preserve">
+    <value>RoleDescriptionToLong</value>
+  </data>
+  <data name="RoleNameCannotBeEmpty" xml:space="preserve">
+    <value>RoleNameCannotBeEmpty</value>
+  </data>
+  <data name="RoleNameToLong" xml:space="preserve">
+    <value>RoleNameToLong</value>
+  </data>
+  <data name="UserCantHaveSomeManyProductInBidding" xml:space="preserve">
+    <value>User Cant Have Some Many Product In Bidding</value>
+  </data>
+  <data name="UserHasNoSuchProduct" xml:space="preserve">
+    <value>User Has No Such Product</value>
+  </data>
+  <data name="UserIsBanndAndCannotBid" xml:space="preserve">
+    <value>UserIsBanndAndCannotBid</value>
+  </data>
+  <data name="UserIsBanned" xml:space="preserve">
+    <value>UserIsBanned</value>
+  </data>
+  <data name="UserMustHaveARole" xml:space="preserve">
+    <value>UserMustHaveARole</value>
+  </data>
+  <data name="UserNameToLong" xml:space="preserve">
+    <value>User name to long</value>
+  </data>
+  <data name="UserPasswordToLong" xml:space="preserve">
+    <value>user passowrd to long</value>
   </data>
 </root>

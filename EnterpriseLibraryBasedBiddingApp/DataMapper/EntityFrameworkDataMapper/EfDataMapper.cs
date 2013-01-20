@@ -33,5 +33,20 @@
                 return new EfUserPersistence();
             }
         }
+
+
+        public IUserRatingPersistence UserRatingFactory
+        {
+            get
+            {
+                return new EfUserRatingPersistence();
+            }
+        }
+
+
+        public IRolesPersistence RolesPersistence
+        {
+            get { return new EfRolePersistence(); }
+        }
     }
 }

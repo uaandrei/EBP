@@ -13,6 +13,11 @@
         <AssociationConnector Association="BiddingDataModel.ProductBid" />
         <AssociationConnector Association="BiddingDataModel.UserBid" />
         <AssociationConnector Association="BiddingDataModel.CategorySubcategory" />
+        <AssociationConnector Association="BiddingDataModel.UserProduct" />
+        <EntityTypeShape EntityType="BiddingDataModel.UserRating" Width="1.5" PointX="2.25" PointY="3.875" />
+        <AssociationConnector Association="BiddingDataModel.UserUserRatings" />
+        <EntityTypeShape EntityType="BiddingDataModel.Role" Width="1.5" PointX="1.25" PointY="1.75" />
+        <AssociationConnector Association="BiddingDataModel.RoleUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

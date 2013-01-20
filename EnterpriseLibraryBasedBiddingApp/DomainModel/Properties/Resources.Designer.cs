@@ -61,6 +61,33 @@ namespace DomainModel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bid Must Be Greater Than Last Bid.
+        /// </summary>
+        public static string BidMustBeGreaterThanLastBid {
+            get {
+                return ResourceManager.GetString("BidMustBeGreaterThanLastBid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to bid must have product.
+        /// </summary>
+        public static string BidMustHaveProduct {
+            get {
+                return ResourceManager.GetString("BidMustHaveProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to bid must have user.
+        /// </summary>
+        public static string BidMustHaveUser {
+            get {
+                return ResourceManager.GetString("BidMustHaveUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bid sum must be greater than 1..
         /// </summary>
         public static string BidSumMustBeGreaterThan1Message {
@@ -88,11 +115,92 @@ namespace DomainModel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CategoryCantHaveSoManyProductInBdidding.
+        /// </summary>
+        public static string CategoryCantHaveSoManyProductInBdidding {
+            get {
+                return ResourceManager.GetString("CategoryCantHaveSoManyProductInBdidding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category name cannot contain more than 20 characters..
+        /// </summary>
+        public static string CategoryNameLength {
+            get {
+                return ResourceManager.GetString("CategoryNameLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description To Long.
+        /// </summary>
+        public static string DescriptionToLong {
+            get {
+                return ResourceManager.GetString("DescriptionToLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid category name!.
+        /// </summary>
+        public static string InvalidCategoryName {
+            get {
+                return ResourceManager.GetString("InvalidCategoryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Description.
+        /// </summary>
+        public static string InvalidDescription {
+            get {
+                return ResourceManager.GetString("InvalidDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to invalid user name.
+        /// </summary>
+        public static string InvalidUserName {
+            get {
+                return ResourceManager.GetString("InvalidUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to invalid user  password.
+        /// </summary>
+        public static string InvalidUserPassword {
+            get {
+                return ResourceManager.GetString("InvalidUserPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The product bid must be greater than the last bid..
         /// </summary>
         public static string NewProductBidMustBeGreaterThanLastOneMessage {
             get {
                 return ResourceManager.GetString("NewProductBidMustBeGreaterThanLastOneMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product bid currency invalid..
+        /// </summary>
+        public static string ProductBidCurrencyInvalid {
+            get {
+                return ResourceManager.GetString("ProductBidCurrencyInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product bid currency max length exceeded: 20..
+        /// </summary>
+        public static string ProductBidCurrencyMaxLenght {
+            get {
+                return ResourceManager.GetString("ProductBidCurrencyMaxLenght", resourceCulture);
             }
         }
         
@@ -111,6 +219,51 @@ namespace DomainModel.Properties {
         public static string ProductEndDateMustBeGreaterThanStartDateMessage {
             get {
                 return ResourceManager.GetString("ProductEndDateMustBeGreaterThanStartDateMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid category for product..
+        /// </summary>
+        public static string ProductInvalidCategory {
+            get {
+                return ResourceManager.GetString("ProductInvalidCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Must Have An Owner.
+        /// </summary>
+        public static string ProductMustHaveAnOwner {
+            get {
+                return ResourceManager.GetString("ProductMustHaveAnOwner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Name Invalid.
+        /// </summary>
+        public static string ProductNameInvalid {
+            get {
+                return ResourceManager.GetString("ProductNameInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product name less than 20 char..
+        /// </summary>
+        public static string ProductNameMaxLength {
+            get {
+                return ResourceManager.GetString("ProductNameMaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Not Available For Bidding.
+        /// </summary>
+        public static string ProductNotAvailableForBidding {
+            get {
+                return ResourceManager.GetString("ProductNotAvailableForBidding", resourceCulture);
             }
         }
         
@@ -138,6 +291,150 @@ namespace DomainModel.Properties {
         public static string ProductStartingPriceMustBeLowerThan1000000Message {
             get {
                 return ResourceManager.GetString("ProductStartingPriceMustBeLowerThan1000000Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RatingCannotBeMoreThan10.
+        /// </summary>
+        public static string RatingCannotBeMoreThan10 {
+            get {
+                return ResourceManager.GetString("RatingCannotBeMoreThan10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RatingDescriptionToLong.
+        /// </summary>
+        public static string RatingDescriptionToLong {
+            get {
+                return ResourceManager.GetString("RatingDescriptionToLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RatingMustBePositiveNumber.
+        /// </summary>
+        public static string RatingMustBePositiveNumber {
+            get {
+                return ResourceManager.GetString("RatingMustBePositiveNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RatingMustContainADescription.
+        /// </summary>
+        public static string RatingMustContainADescription {
+            get {
+                return ResourceManager.GetString("RatingMustContainADescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RatingMustHaveAssociatedUser.
+        /// </summary>
+        public static string RatingMustHaveAssociatedUser {
+            get {
+                return ResourceManager.GetString("RatingMustHaveAssociatedUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RoleDescriptionCannotBeEmpty.
+        /// </summary>
+        public static string RoleDescriptionCannotBeEmpty {
+            get {
+                return ResourceManager.GetString("RoleDescriptionCannotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RoleDescriptionToLong.
+        /// </summary>
+        public static string RoleDescriptionToLong {
+            get {
+                return ResourceManager.GetString("RoleDescriptionToLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RoleNameCannotBeEmpty.
+        /// </summary>
+        public static string RoleNameCannotBeEmpty {
+            get {
+                return ResourceManager.GetString("RoleNameCannotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RoleNameToLong.
+        /// </summary>
+        public static string RoleNameToLong {
+            get {
+                return ResourceManager.GetString("RoleNameToLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Cant Have Some Many Product In Bidding.
+        /// </summary>
+        public static string UserCantHaveSomeManyProductInBidding {
+            get {
+                return ResourceManager.GetString("UserCantHaveSomeManyProductInBidding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Has No Such Product.
+        /// </summary>
+        public static string UserHasNoSuchProduct {
+            get {
+                return ResourceManager.GetString("UserHasNoSuchProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserIsBanndAndCannotBid.
+        /// </summary>
+        public static string UserIsBanndAndCannotBid {
+            get {
+                return ResourceManager.GetString("UserIsBanndAndCannotBid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserIsBanned.
+        /// </summary>
+        public static string UserIsBanned {
+            get {
+                return ResourceManager.GetString("UserIsBanned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserMustHaveARole.
+        /// </summary>
+        public static string UserMustHaveARole {
+            get {
+                return ResourceManager.GetString("UserMustHaveARole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name to long.
+        /// </summary>
+        public static string UserNameToLong {
+            get {
+                return ResourceManager.GetString("UserNameToLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to user passowrd to long.
+        /// </summary>
+        public static string UserPasswordToLong {
+            get {
+                return ResourceManager.GetString("UserPasswordToLong", resourceCulture);
             }
         }
     }

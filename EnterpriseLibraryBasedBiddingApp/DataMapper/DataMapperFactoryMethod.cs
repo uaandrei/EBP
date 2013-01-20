@@ -1,6 +1,5 @@
 ﻿using DataMapper.EntityFrameworkDataMapper;
 using System;
-using System.Configuration;
 
 namespace DataMapper
 {
@@ -8,13 +7,12 @@ namespace DataMapper
     {
         public static IDataMapperFactory GetCurrentFactory()
         {
-            var dataMapperValue = ConfigurationManager.AppSettings["dataMapper"];
-            switch (dataMapperValue)
+            switch (ConfigurationConstants.Items.DataMapper)
             {
                 case "ef":
                     return new EfDataMapper();
                 default:
-                    throw new NotImplementedException("Unimplemented data mapper: " + dataMapperValue);
+                    throw new NotImplementedException("Unimplemented data mapper: " + ConfigurationConstants.Items.DataMapper);
             }
         }
     }

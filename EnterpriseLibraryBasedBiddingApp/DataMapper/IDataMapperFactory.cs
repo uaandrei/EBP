@@ -21,5 +21,12 @@
         {
             get;
         }
+
+        IUserRatingPersistence UserRatingFactory
+        {
+            get;
+        }
+
+        IRolesPersistence RolesPersistence { get; }
     }
 }

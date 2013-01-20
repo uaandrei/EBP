@@ -10,6 +10,8 @@
     <EntitySet Name="Categories" EntityType="BiddingDataModel.Store.Categories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Users" EntityType="BiddingDataModel.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Bids" EntityType="BiddingDataModel.Store.Bids" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRatings" EntityType="BiddingDataModel.Store.UserRatings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="BiddingDataModel.Store.Roles" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="ProductCategory" Association="BiddingDataModel.Store.ProductCategory">
       <End Role="Product" EntitySet="Products" />
       <End Role="Category" EntitySet="Categories" />
@@ -26,6 +28,18 @@
       <End Role="Category" EntitySet="Categories" />
       <End Role="Category1" EntitySet="Categories" />
     </AssociationSet>
+    <AssociationSet Name="UserProduct" Association="BiddingDataModel.Store.UserProduct">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserRatings" Association="BiddingDataModel.Store.UserUserRatings">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserRatings" EntitySet="UserRatings" />
+    </AssociationSet>
+    <AssociationSet Name="RoleUser" Association="BiddingDataModel.Store.RoleUser">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Products">
     <Key>
@@ -39,6 +53,8 @@
     <Property Name="BidCurrency" Type="nvarchar" Nullable="false" MaxLength="10" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Available" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Categories">
     <Key>
@@ -55,6 +71,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="BanEndDate" Type="datetime" Nullable="true" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Bids">
     <Key>
@@ -64,6 +82,23 @@
     <Property Name="ProductId" Type="int" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="Sum" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRatings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rating" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
   </EntityType>
   <Association Name="ProductCategory">
     <End Role="Product" Type="BiddingDataModel.Store.Products" Multiplicity="*" />
@@ -113,6 +148,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="UserProduct">
+    <End Role="User" Type="BiddingDataModel.Store.Users" Multiplicity="1" />
+    <End Role="Product" Type="BiddingDataModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserRatings">
+    <End Role="User" Type="BiddingDataModel.Store.Users" Multiplicity="1" />
+    <End Role="UserRatings" Type="BiddingDataModel.Store.UserRatings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRatings">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleUser">
+    <End Role="Role" Type="BiddingDataModel.Store.Roles" Multiplicity="1" />
+    <End Role="User" Type="BiddingDataModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -138,6 +209,20 @@
             <End Role="Category" EntitySet="Categories" />
             <End Role="Category1" EntitySet="Categories" />
           </AssociationSet>
+          <AssociationSet Name="UserProduct" Association="BiddingDataModel.UserProduct">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <EntitySet Name="UserRatings" EntityType="BiddingDataModel.UserRating" />
+          <AssociationSet Name="UserUserRatings" Association="BiddingDataModel.UserUserRatings">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserRatings" EntitySet="UserRatings" />
+          </AssociationSet>
+          <EntitySet Name="Roles" EntityType="BiddingDataModel.Role" />
+          <AssociationSet Name="RoleUser" Association="BiddingDataModel.RoleUser">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Product">
           <Key>
@@ -153,6 +238,9 @@
           <Property Type="String" Name="BidCurrency" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="Description" Nullable="false" MaxLength="500" />
+          <Property Type="Boolean" Name="Available" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="BiddingDataModel.UserProduct" FromRole="Product" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
           </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -172,6 +260,11 @@
           <NavigationProperty Name="Bids" Relationship="BiddingDataModel.UserBid" FromRole="User" ToRole="Bid" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="Password" Nullable="false" MaxLength="20" />
+          <NavigationProperty Name="Products" Relationship="BiddingDataModel.UserProduct" FromRole="User" ToRole="Product" />
+          <NavigationProperty Name="UserRatings" Relationship="BiddingDataModel.UserUserRatings" FromRole="User" ToRole="UserRatings" />
+          <Property Type="DateTime" Name="BanEndDate" Nullable="true" />
+          <NavigationProperty Name="Role" Relationship="BiddingDataModel.RoleUser" FromRole="User" ToRole="Role" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
         </EntityType>
         <EntityType Name="Bid">
           <Key>
@@ -224,6 +317,61 @@
           <End Type="BiddingDataModel.Category" Role="Category" Multiplicity="*" />
           <End Type="BiddingDataModel.Category" Role="Category1" Multiplicity="0..1" />
         </Association>
+        <Association Name="UserProduct">
+          <End Type="BiddingDataModel.User" Role="User" Multiplicity="1" />
+          <End Type="BiddingDataModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserRating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="Rating" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="500" />
+          <NavigationProperty Name="User" Relationship="BiddingDataModel.UserUserRatings" FromRole="UserRatings" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+        </EntityType>
+        <Association Name="UserUserRatings">
+          <End Type="BiddingDataModel.User" Role="User" Multiplicity="1" />
+          <End Type="BiddingDataModel.UserRating" Role="UserRatings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRatings">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="500" />
+          <NavigationProperty Name="Users" Relationship="BiddingDataModel.RoleUser" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <Association Name="RoleUser">
+          <End Type="BiddingDataModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="BiddingDataModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -241,6 +389,8 @@
           <ScalarProperty Name="BidCurrency" ColumnName="BidCurrency" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Available" ColumnName="Available" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -258,6 +408,8 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="BanEndDate" ColumnName="BanEndDate" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -268,6 +420,25 @@
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Sum" ColumnName="Sum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRatings">
+      <EntityTypeMapping TypeName="IsTypeOf(BiddingDataModel.UserRating)">
+        <MappingFragment StoreEntitySet="UserRatings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(BiddingDataModel.Role)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
