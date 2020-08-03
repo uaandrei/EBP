@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FDA221A-4A04-4CBC-855D-EA6202A039C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataMapper</RootNamespace>
+    <AssemblyName>DataMapper</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataMapperFactoryMethod.cs" />
+    <Compile Include="EntityFrameworkDataMapper\BiddingDataModel.Context.cs">
+      <DependentUpon>BiddingDataModel.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="EntityFrameworkDataMapper\BiddingDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiddingDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkDataMapper\EfBidPersistence.cs" />
+    <Compile Include="EntityFrameworkDataMapper\EfCategoryPersistence.cs" />
+    <Compile Include="EntityFrameworkDataMapper\EfProductPersistence.cs" />
+    <Compile Include="EntityFrameworkDataMapper\EfRolePersistence.cs" />
+    <Compile Include="EntityFrameworkDataMapper\EfUserPersistence.cs" />
+    <Compile Include="EntityFrameworkDataMapper\EfDataMapper.cs" />
+    <Compile Include="EntityFrameworkDataMapper\EfUserRatingPersistence.cs" />
+    <Compile Include="IBidPersistence.cs" />
+    <Compile Include="ICategoryPersistence.cs" />
+    <Compile Include="IDataMapperFactory.cs" />
+    <Compile Include="IProductPersistence.cs" />
+    <Compile Include="IRolesPersistence.cs" />
+    <Compile Include="IUserPersistence.cs" />
+    <Compile Include="IUserRatingPersistence.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="EntityFrameworkDataMapper\BiddingDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BiddingDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityFrameworkDataMapper\BiddingDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BiddingDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EntityFrameworkDataMapper\BiddingDataModel.edmx.diagram">
+      <DependentUpon>BiddingDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityFrameworkDataMapper\BiddingDataModel.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BIddingExceptions\BiddingExceptions.csproj">
+      <Project>{af2dad43-5981-4890-ad0b-ff1d7f15a574}</Project>
+      <Name>BiddingExceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConfigurationConstants\ConfigurationConstants.csproj">
+      <Project>{8d0bb3a5-84a7-4f30-bccd-b8c4cba4cfaf}</Project>
+      <Name>ConfigurationConstants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{ebe978f7-888f-4662-82ac-9f34b98aa26a}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoggerService\LoggerService.csproj">
+      <Project>{a6bd7e69-caf4-41cb-be82-e99fbb553be4}</Project>
+      <Name>LoggerService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

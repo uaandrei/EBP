@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataMapper", "DataMapper", "{F2EB107C-C97C-4B5A-8795-A7D0025CEA71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainLayer", "DomainLayer", "{4C1FE45F-C336-4C45-BD2D-1660552BFE0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GUIs", "GUIs", "{312DA04C-8643-4550-A7A7-4A9EC8A30084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMapper", "DataMapper\DataMapper.csproj", "{1FDA221A-4A04-4CBC-855D-EA6202A039C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{EBE978F7-888F-4662-82AC-9F34B98AA26A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{FBE18B45-696F-4DD0-9675-A49464C347E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiddingWinFormsApp", "BiddingWinFormsApp\BiddingWinFormsApp.csproj", "{2BDC6B00-2215-4260-8DDA-97E3DA2E18E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTesting", "UnitTesting", "{03A89AFC-7967-452B-80C6-B2A2C178BFC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidUnitTesting", "BidUnitTesting\BidUnitTesting.csproj", "{CFD5AE15-E3AA-4A8A-AA28-106D36A2256B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exceptions", "Exceptions", "{C2D313E4-7FF3-4BCE-BC41-1A9129F1E4D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiddingExceptions", "BIddingExceptions\BiddingExceptions.csproj", "{AF2DAD43-5981-4890-AD0B-FF1D7F15A574}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logger", "Logger", "{9725D01D-6155-4A88-B8BD-AADCEDC26D6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{A6BD7E69-CAF4-41CB-BE82-E99FBB553BE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{1E53BC20-07BF-4898-9429-1CB83326DEE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationConstants", "ConfigurationConstants\ConfigurationConstants.csproj", "{8D0BB3A5-84A7-4F30-BCCD-B8C4CBA4CFAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FDA221A-4A04-4CBC-855D-EA6202A039C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FDA221A-4A04-4CBC-855D-EA6202A039C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FDA221A-4A04-4CBC-855D-EA6202A039C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FDA221A-4A04-4CBC-855D-EA6202A039C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE978F7-888F-4662-82AC-9F34B98AA26A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE978F7-888F-4662-82AC-9F34B98AA26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE978F7-888F-4662-82AC-9F34B98AA26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE978F7-888F-4662-82AC-9F34B98AA26A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBE18B45-696F-4DD0-9675-A49464C347E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE18B45-696F-4DD0-9675-A49464C347E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE18B45-696F-4DD0-9675-A49464C347E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE18B45-696F-4DD0-9675-A49464C347E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BDC6B00-2215-4260-8DDA-97E3DA2E18E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BDC6B00-2215-4260-8DDA-97E3DA2E18E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BDC6B00-2215-4260-8DDA-97E3DA2E18E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BDC6B00-2215-4260-8DDA-97E3DA2E18E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD5AE15-E3AA-4A8A-AA28-106D36A2256B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD5AE15-E3AA-4A8A-AA28-106D36A2256B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD5AE15-E3AA-4A8A-AA28-106D36A2256B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD5AE15-E3AA-4A8A-AA28-106D36A2256B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF2DAD43-5981-4890-AD0B-FF1D7F15A574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2DAD43-5981-4890-AD0B-FF1D7F15A574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2DAD43-5981-4890-AD0B-FF1D7F15A574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2DAD43-5981-4890-AD0B-FF1D7F15A574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6BD7E69-CAF4-41CB-BE82-E99FBB553BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BD7E69-CAF4-41CB-BE82-E99FBB553BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BD7E69-CAF4-41CB-BE82-E99FBB553BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BD7E69-CAF4-41CB-BE82-E99FBB553BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0BB3A5-84A7-4F30-BCCD-B8C4CBA4CFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0BB3A5-84A7-4F30-BCCD-B8C4CBA4CFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0BB3A5-84A7-4F30-BCCD-B8C4CBA4CFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0BB3A5-84A7-4F30-BCCD-B8C4CBA4CFAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1FDA221A-4A04-4CBC-855D-EA6202A039C2} = {F2EB107C-C97C-4B5A-8795-A7D0025CEA71}
+		{EBE978F7-888F-4662-82AC-9F34B98AA26A} = {4C1FE45F-C336-4C45-BD2D-1660552BFE0B}
+		{FBE18B45-696F-4DD0-9675-A49464C347E2} = {4C1FE45F-C336-4C45-BD2D-1660552BFE0B}
+		{2BDC6B00-2215-4260-8DDA-97E3DA2E18E6} = {312DA04C-8643-4550-A7A7-4A9EC8A30084}
+		{CFD5AE15-E3AA-4A8A-AA28-106D36A2256B} = {03A89AFC-7967-452B-80C6-B2A2C178BFC9}
+		{AF2DAD43-5981-4890-AD0B-FF1D7F15A574} = {C2D313E4-7FF3-4BCE-BC41-1A9129F1E4D9}
+		{A6BD7E69-CAF4-41CB-BE82-E99FBB553BE4} = {9725D01D-6155-4A88-B8BD-AADCEDC26D6D}
+		{8D0BB3A5-84A7-4F30-BCCD-B8C4CBA4CFAF} = {1E53BC20-07BF-4898-9429-1CB83326DEE2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Validation.5.0.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal
